@@ -9,7 +9,7 @@ import { InfoPageService } from './services/info-page.service';
 export class AppComponent {
   title = 'portafolio';
 
-  constructor( public infoPageService: InfoPageService){
+  constructor( public infoService: InfoPageService){
 
   }
 }
