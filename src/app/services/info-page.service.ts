@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { InfoPage } from '../interfaces/info-pagina.interface';
+import { InfoPage } from '../interfaces/info-page.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -12,26 +12,27 @@ export class InfoPageService {
   cargada = false;
 
   constructor(private http: HttpClient) {
-    console.log('Servicio de infoPage listo');
+    // console.log('Servicio de infoPage listo');
     this.loadInfo();
     this.loadTeam();
 
   }
   private loadInfo(){
-    // Leer el archivo JSON
+    // Leer el archivo JSON local
     this.http.get('assets/data/data-page.json')
     .subscribe( (resp: InfoPage) => {
       this.cargada = true;
       this.info = resp;
-      console.log(resp);
+      // console.log(resp);
     });
   }
 
   private loadTeam(){
+    // Leer el archivo JSON de Firebase
     this.http.get('https://orosuswebangular.firebaseio.com/equipo.json')
     .subscribe( (resp: any[]) => {
-      this.equipo = resp;
-      console.log(resp);
+      this.team = resp;
+      // console.log(resp);
     });
   }
 }
