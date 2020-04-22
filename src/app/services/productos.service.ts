@@ -9,7 +9,7 @@ import { Product } from '../interfaces/product.interface';
 export class ProductosService {
 
   cargando = true;
-  item: Product[] = [];
+  product: Product[] = [];
 
   constructor( private http: HttpClient) {
     this.cargarProductos();
@@ -19,6 +19,7 @@ export class ProductosService {
     this.http.get('https://orosuswebangular.firebaseio.com/productos_idx.json')
         .subscribe( (resp: Product[]) => {
           console.log(resp);
+          this.product = resp;
           this.cargando = false;
         });
   }
