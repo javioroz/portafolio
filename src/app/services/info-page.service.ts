@@ -7,7 +7,7 @@ import { InfoPage } from '../interfaces/info-page.interface';
 })
 export class InfoPageService {
 
-  info: InfoPage = {};
+  info: InfoPage;
   team: any[] = [];
   cargada = false;
 
@@ -23,7 +23,7 @@ export class InfoPageService {
     .subscribe( (resp: InfoPage) => {
       this.cargada = true;
       this.info = resp;
-      // console.log(resp);
+      //console.log(resp);
     });
   }
 
