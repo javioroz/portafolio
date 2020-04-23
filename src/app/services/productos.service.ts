@@ -20,7 +20,9 @@ export class ProductosService {
         .subscribe( (resp: Product[]) => {
           console.log(resp);
           this.product = resp;
-          this.cargando = false;
+          setTimeout(() => {
+            this.cargando = false;
+          }, 500); // espero 1 seg mostrando icono de cargando
         });
   }
 }

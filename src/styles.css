@@ -1,5 +1,23 @@
 /* You can add global styles to this file, and also import other style files */
+/*------------------------------------------------------*/
+/* Estilos generales */
+.dark-mode{
+  color:white;
+  background:black;
+}
 
+.light-mode{
+  color: black;
+  background: white;
+}
+
+/* Color del Loading SVG Animation */
+svg path,
+svg rect{
+  fill: black;
+}
+
+/*------------------------------------------------------*/
 /* Copied from animated.css */
 .animated {
     -webkit-animation-duration: 1s;
@@ -43,3 +61,5 @@
     -webkit-animation-name: fadeIn;
     animation-name: fadeIn;
 }
+
+/*------------------------------------------------------*/
