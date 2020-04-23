@@ -18,11 +18,15 @@ export class ProductosService {
   private cargarProductos() {
     this.http.get('https://orosuswebangular.firebaseio.com/productos_idx.json')
         .subscribe( (resp: Product[]) => {
-          console.log(resp);
+          // console.log(resp);
           this.product = resp;
           setTimeout(() => {
             this.cargando = false;
           }, 500); // espero 1 seg mostrando icono de cargando
         });
+  }
+
+  getProducto( id: string ){
+    return this.http.get(`https://orosuswebangular.firebaseio.com/productos/${ id }.json`);
   }
 }
