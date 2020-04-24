@@ -85,7 +85,6 @@ body {
     padding-bottom: 0;
   }
 }
-
 .rk-logo {
   -webkit-box-flex: 0;
   -webkit-flex: 0 0 100%;
@@ -95,8 +94,11 @@ body {
   font-weight: 700;
   letter-spacing: 2.25px;
   text-align: center;
-  text-transform: uppercase;
-  width: 20%;
+  /*text-transform: uppercase;*/
+}
+.rk-logo img{
+  height: 2.5rem;
+  vertical-align: middle;
 }
 .rk-logo sup {
   font-size: .5625rem;

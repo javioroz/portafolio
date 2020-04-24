@@ -10,16 +10,20 @@ import { ProductPage } from '../../interfaces/product-page.interface';
 })
 export class ItemComponent implements OnInit {
 
+  product: ProductPage;
+
+
   constructor( private route: ActivatedRoute,
                public productService: ProductosService ) { }
 
   ngOnInit(): void {
     this.route.params
         .subscribe( paramsURL => {
-          console.log(paramsURL.id);
+          // console.log(paramsURL.id);
           this.productService.getProducto(paramsURL.id)
               .subscribe( (product: ProductPage) => {
-                console.log(product);
+                // console.log(product);
+                this.product = product;
               });
         });
   }
