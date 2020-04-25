@@ -11,6 +11,7 @@ import { ProductPage } from '../../interfaces/product-page.interface';
 export class ItemComponent implements OnInit {
 
   product: ProductPage;
+  id: string;
 
 
   constructor( private route: ActivatedRoute,
@@ -24,6 +25,7 @@ export class ItemComponent implements OnInit {
               .subscribe( (product: ProductPage) => {
                 // console.log(product);
                 this.product = product;
+                this.id = paramsURL.id;
               });
         });
   }
