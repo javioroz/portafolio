@@ -11,6 +11,7 @@
         <use xlink:href="assets/img/symbols.svg#bar"></use>
       </svg>
     </label>
+    <!-- Inicia TOPBAR -->
     <div class="ae-container-fluid rk-topbar">
       <h1 class="rk-logo">
         <a routerLink="">  
@@ -20,28 +21,38 @@
         </a>
       </h1>
       <nav class="rk-navigation">
+        <!-- Abre Menu -->
         <ul class="rk-menu">
           <li routerLinkActive="active" class="rk-menu__item">
             <a routerLink="home" class="rk-menu__link">Home</a>
           </li>
           <li routerLinkActive="active" class="rk-menu__item">
-            <a href="#0" class="rk-menu__link">Blog</a>
+            <a href="#0" class="rk-menu__link">Recipes</a>
           </li>
           <li routerLinkActive="active" class="rk-menu__item">
-            <a href="#0" class="rk-menu__link">Page</a>
+            <a href="#0" class="rk-menu__link">Travels</a>
           </li>
           <li routerLinkActive="active" class="rk-menu__item">
             <a routerLink="about" class="rk-menu__link">About</a>
           </li>
         </ul>
-        <form class="rk-search">
-          <input type="text" placeholder="Search" id="urku-search" class="rk-search-field">
+        <!-- Cierra Menu -->
+        <!-- Abre Caja de busqueda -->
+        <div class="rk-search">
+          <input type="text"
+                 (keyup.enter)="searchProduct( txtSearch.value )"
+                 placeholder="Search..." 
+                 id="urku-search" 
+                 class="rk-search-field"
+                 #txtSearch>
+              <!-- Cuando levante tecla enter se lee el valor de la caja de texto 
+              y se manda el valor al metodo searchProduct en header.component.ts -->
           <label for="urku-search">
-            <svg>
-              <use xlink:href="assets/img/symbols.svg#icon-search"></use>
-            </svg>
+            <svg><use xlink:href="assets/img/symbols.svg#icon-search"></use></svg>
           </label>
-        </form>
+        </div>
+        <!-- Cierra Caja de busqueda -->
       </nav>
     </div>
+    <!-- Cierra TOPBAR -->
   </header>

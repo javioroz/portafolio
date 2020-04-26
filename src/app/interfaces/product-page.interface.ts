@@ -3,6 +3,8 @@
 
 export interface ProductPage {
   categoria: string;
+  cod: string;
+  codsig: string;
   desc1: string;
   desc2: string;
   producto: string;
